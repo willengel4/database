@@ -1,22 +1,21 @@
-
 import re
 
 class Team:
     def __init__(self, id, name, city, state):
         self.id = id
-        self.name = name
         self.city = city
         self.state = state
         self.players = []
 
 class Player:
-    def __init__(self, id, name, height, weight, birthDate, college)
+    def __init__(self, id, name, height, weight, birthDate, college, team)
         self.id = id
         self.name = name
         self.height = height
         self.weight = weight
         self.birthDate = birthDate
         self.college = college
+        self.team = team
 
 class Play:
     def __init__()
@@ -37,8 +36,6 @@ def projection(columns, data, columnsToInclude):
     indices = [columns[column] for column in columnsToInclude]
     return columnIndices(columnsToInclude), [[row[index] for index in indices] for row in data]
 
-
-
 #Loads raw play by play data
 raw_pbp_data = loadFile('2018/pbp-2018_tabs.txt', '\t')
 columns, data = seperateHeadBody(raw_pbp_data)
@@ -55,4 +52,3 @@ passes = selection(singleGameColumns, singleGame, 'PlayType', 'PASS')
 for row in passes:
     playDescription = row[singleGameColumns['Description']]
     playersInvolved = re.findall("\d*-\w\.[A-Z]\w*", playDescription)
-    
