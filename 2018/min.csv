@@ -2,7 +2,7 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 21,Ameer Abdullah\AbduAm00,25,,7,0,203,5-9,Nebraska,6/13/1993,3,0,Detroit Lions / 2nd / 54th pick / 2015,$876745
 20,Mackensie Alexander\AlexMa01,25,cb,15,6,192,5-10,Clemson,11/12/1993,2,3,Minnesota Vikings / 2nd / 54th pick / 2016,$842391
 5,Dan Bailey\BailDa00,30,K,14,0,190,6-0,Oklahoma St.,1/26/1988,7,1,,$1750000
-55,Anthony Barr*\BarrAn00,26,LB,13,13,255,6-5,UCLA,3/18/1992,4,9,Minnesota Vikings / 1st / 9th pick / 2014,$12306000
+55,Anthony Barr\BarrAn00,26,LB,13,13,255,6-5,UCLA,3/18/1992,4,9,Minnesota Vikings / 1st / 9th pick / 2014,$12306000
 12,Chad Beebe\BeebCh00,24,,3,0,183,5-10,Northern Illinois,6/1/1994,Rook,0,,$129200
 44,Mike Boone\BoonMi00,23,,8,0,206,5-10,,6/30/1995,Rook,0,,$480000
 90,Tashawn Bower\BoweTa00,23,,5,0,250,6-5,LSU,2/18/1995,1,1,,$555000
@@ -24,7 +24,7 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 69,Rashod Hill\HillRa01,26,T,16,8,313,6-6,Southern Miss,1/12/1992,2,5,,$630000
 92,Jalyn Holmes\HolmJa01,22,,5,0,283,6-5,Ohio St.,1/25/1996,Rook,1,Minnesota Vikings / 4th / 102nd pick / 2018,$480000
 21,Mike Hughes\HughMi00,21,cb,6,2,189,5-10,North CarolinaCentral Florida,2/11/1997,Rook,2,Minnesota Vikings / 1st / 30th pick / 2018,$480000
-99,Danielle Hunter*\HuntDa01,24,DE,16,16,252,6-5,LSU,10/29/1994,3,17,Minnesota Vikings / 3rd / 88th pick / 2015,$1907000
+99,Danielle Hunter\HuntDa01,24,DE,16,16,252,6-5,LSU,10/29/1994,3,17,Minnesota Vikings / 3rd / 88th pick / 2015,$1907000
 23,George Iloka\IlokGe00,28,ss,16,3,225,6-4,Boise St.,3/31/1990,6,2,Cincinnati Bengals / 5th / 167th pick / 2012,$790000
 63,Danny Isidora\IsidDa00,24,lg,14,2,306,6-3,Miami (FL),6/5/1994,1,2,Minnesota Vikings / 5th / 180th pick / 2017,$555000
 36,Craig James\JameCr01,22,,3,0,195,5-10,,4/29/1996,Rook,0,,$141175
@@ -38,7 +38,7 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 89,David Morgan\MorgDa01,25,te,11,6,265,6-4,Texas-San Antonio,5/19/1993,2,0,Minnesota Vikings / 6th / 188th pick / 2016,$630000
 25,Latavius Murray\MurrLa00,28,rb,16,6,230,6-3,Central Florida,1/18/1990,5,5,Oakland Raiders / 6th / 181st pick / 2013,$3650000
 72,Storm Norton\NortSt00,24,,1,0,317,6-7,Toledo,5/16/1994,Rook,0,,$129200
-75,Brian O'Neill\ONeiBr00,23,T,15,11,297,6-7,Pittsburgh,9/15/1995,Rook,6,Minnesota Vikings / 2nd / 62nd pick / 2018,$480000
+75,Brian ONeill\ONeiBr00,23,T,15,11,297,6-7,Pittsburgh,9/15/1995,Rook,6,Minnesota Vikings / 2nd / 62nd pick / 2018,$480000
 60,David Parry\ParrDa00,26,,3,0,317,6-2,Stanford,3/7/1992,3,0,Indianapolis Colts / 5th / 151st pick / 2015,$630000
 71,Riley Reiff\ReifRi00,30,T,13,13,305,6-6,Iowa,12/1/1988,6,7,Detroit Lions / 1st / 23rd pick / 2012,$9100000
 74,Mike Remmers\RemmMi00,29,RG,16,16,310,6-5,Oregon St.,4/11/1989,6,7,,$3900000
@@ -48,8 +48,8 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 82,Kyle Rudolph\RudoKy00,29,TE,16,16,265,6-6,Notre Dame,11/9/1989,7,5,Minnesota Vikings / 2nd / 43rd pick / 2011,$6025000
 34,Andrew Sendejo\SendAn00,31,ss,5,5,210,6-1,Rice,9/9/1987,8,2,,$3450000
 35,Marcus Sherels\SherMa20,31,,12,0,175,5-10,Minnesota,9/30/1987,8,1,,$1050000
-22,Harrison Smith*\SmitHa00,29,FS,16,16,214,6-2,Notre Dame,2/2/1989,6,12,Minnesota Vikings / 1st / 29th pick / 2012,$7650000
-19,Adam Thielen*\ThieAd00,28,WR,16,16,200,6-2,Minnesota St.,8/22/1990,5,11,,$3850000
+22,Harrison Smith\SmitHa00,29,FS,16,16,214,6-2,Notre Dame,2/2/1989,6,12,Minnesota Vikings / 1st / 29th pick / 2012,$7650000
+19,Adam Thielen\ThieAd00,28,WR,16,16,200,6-2,Minnesota St.,8/22/1990,5,11,,$3850000
 32,Roc Thomas\ThomRo05,23,,5,0,198,5-10,,9/2/1995,Rook,0,,$480000
 11,Laquon Treadwell\TreaLa00,23,wr,15,7,215,6-2,Mississippi,6/14/1995,2,2,Minnesota Vikings / 1st / 23rd pick / 2016,$1353180
 26,Trae Waynes\WaynTr00,26,LCB,14,14,190,6-0,Michigan St.,7/25/1992,3,5,Minnesota Vikings / 1st / 11th pick / 2015,$2200142

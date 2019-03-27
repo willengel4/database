@@ -3,8 +3,8 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 6,Ryan Allen\AlleRy01,28,P,16,0,220,6-2,Louisiana Tech,2/28/1990,5,2,,$1300000
 60,David Andrews\AndrDa00,26,C,16,16,300,6-3,Georgia,7/10/1992,3,8,,$900000
 38,Kenjon Barner\BarnKe00,28,,5,0,195,5-9,Oregon,4/28/1990,5,0,Carolina Panthers / 6th / 182nd pick / 2013,$743529
-51,Ja'Whaun Bentley\BentJa00,22,lb,3,2,255,6-2,Purdue,8/24/1996,Rook,2,New England Patriots / 5th / 143rd pick / 2018,$480000
-12,Tom Brady*\BradTo00,41,QB,16,16,225,6-4,Michigan,8/3/1977,18,14,New England Patriots / 6th / 199th pick / 2000,$4000000
+51,JaWhaun Bentley\BentJa00,22,lb,3,2,255,6-2,Purdue,8/24/1996,Rook,2,New England Patriots / 5th / 143rd pick / 2018,$480000
+12,Tom Brady\BradTo00,41,QB,16,16,225,6-4,Michigan,8/3/1977,18,14,New England Patriots / 6th / 199th pick / 2000,$4000000
 90,Malcom Brown\BrowMa01,24,DT,15,14,320,6-2,Texas,2/2/1994,3,8,New England Patriots / 1st / 32nd pick / 2015,$1473167
 67,Trent Brown\BrowTr02,25,T,16,16,380,6-8,Florida,4/13/1993,3,10,San Francisco 49ers / 7th / 244th pick / 2015,$190700
 34,Rex Burkhead\BurkRe00,28,rb,8,4,215,5-10,Nebraska,7/2/1990,5,2,Cincinnati Bengals / 6th / 190th pick / 2013,$1000000
@@ -22,7 +22,7 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 11,Julian Edelman\EdelJu00,32,WR,12,12,198,5-10,Kent St.,5/22/1986,9,9,New England Patriots / 7th / 232nd pick / 2009,$1529412
 66,James Ferentz\FereJa00,29,,2,0,300,6-2,Iowa,6/5/1989,4,0,,$129200
 98,Trey Flowers\FlowTr00,25,DE,15,15,265,6-2,Arkansas,8/16/1993,3,9,New England Patriots / 4th / 101st pick / 2015,$1907000
-24,Stephon Gilmore*+\GilmSt00,28,RCB,16,16,202,6-1,South Carolina,9/19/1990,6,14,Buffalo Bills / 1st / 10th pick / 2012,$8500000
+24,Stephon Gilmore\GilmSt00,28,RCB,16,16,202,6-1,South Carolina,9/19/1990,6,14,Buffalo Bills / 1st / 10th pick / 2012,$8500000
 10,Josh Gordon\GordJo02,27,WR,11,11,225,6-3,UtahBaylor,4/13/1991,6,7,Cleveland Browns / 2nd / 1st pick / 2012 Supp,$790000
 3,Stephen Gostkowski\GostSt20,34,K,16,0,215,6-1,Memphis,1/28/1984,12,3,New England Patriots / 4th / 118th pick / 2006,$3200000
 50,Nicholas Grigsby\GrigNi01,26,,9,0,230,6-2,Pittsburgh,7/2/1992,2,1,,$630000
@@ -30,7 +30,7 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 87,Rob Gronkowski\GronRo00,29,TE,13,11,265,6-6,Arizona,5/14/1989,8,6,New England Patriots / 2nd / 42nd pick / 2010,$8000000
 93,Lawrence Guy\GuyxLa00,28,DT,16,15,315,6-4,Arizona St.,3/17/1990,7,8,Green Bay Packers / 7th / 233rd pick / 2011,$1400000
 21,Duron Harmon\HarmDu00,27,db,16,6,205,6-1,Rutgers,1/24/1991,5,3,New England Patriots / 3rd / 91st pick / 2013,$1500000
-54,Dont'a Hightower\HighDo01,28,LB,15,15,260,6-3,Alabama,3/12/1990,6,8,New England Patriots / 1st / 25th pick / 2012,$5750000
+54,Donta Hightower\HighDo01,28,LB,15,15,260,6-3,Alabama,3/12/1990,6,8,New England Patriots / 1st / 25th pick / 2012,$5750000
 33,Jeremy Hill\HillJe01,26,,1,0,230,6-1,LSU,10/20/1992,4,0,Cincinnati Bengals / 2nd / 55th pick / 2014,$1000000
 15,Chris Hogan\HogaCh00,30,wr,16,7,210,6-1,Monmouth,10/24/1988,7,5,,$3000000
 47,Jacob Hollister\HollJa03,25,wr,8,1,245,6-4,Wyoming,11/18/1993,1,0,,$555000

@@ -11,7 +11,7 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 87,Darrell Daniels\DaniDa02,24,te,9,2,254,6-3,Washington,11/22/1994,1,0,,$555000
 27,Mike Davis\DaviMi01,25,rb,15,2,217,5-9,South Carolina,2/19/1993,3,6,San Francisco 49ers / 4th / 126th pick / 2015,$800000
 84,Ed Dickson\DickEd00,31,te,10,1,250,6-4,Oregon,7/25/1987,8,1,Baltimore Ravens / 3rd / 70th pick / 2010,$1000000
-4,Michael Dickson*+\DickMi00,22,P,16,0,208,6-2,Texas,1/4/1996,Rook,3,Seattle Seahawks / 5th / 149th pick / 2018,$480000
+4,Michael Dickson\DickMi00,22,P,16,0,208,6-2,Texas,1/4/1996,Rook,3,Seattle Seahawks / 5th / 149th pick / 2018,$480000
 88,Will Dissly\DissWi00,22,te,4,4,265,6-4,Washington,7/8/1996,Rook,2,Seattle Seahawks / 4th / 120th pick / 2018,$480000
 52,Emmanuel Ellerbee\ElleEm00,22,,4,0,235,6-1,,11/20/1996,Rook,0,,$480000
 74,George Fant\FantGe00,26,t,16,7,322,6-5,Western Kentucky,7/19/1992,2,5,,$630000
@@ -58,6 +58,6 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 23,Neiko Thorpe\ThorNe00,28,,12,0,210,6-2,Auburn,2/11/1990,6,1,,$1600000
 17,Malik Turner\TurnMa00,22,,6,0,202,6-2,,1/30/1996,Rook,0,,$121600
 81,Nick Vannett\VannNi00,25,TE,15,9,261,6-6,Ohio St.,3/6/1993,2,3,Seattle Seahawks / 3rd / 94th pick / 2016,$652000
-54,Bobby Wagner*+\WagnBo00,28,MLB,15,15,245,6-0,Utah St.,6/27/1990,6,16,Seattle Seahawks / 2nd / 47th pick / 2012,$10000000
-3,Russell Wilson*\WilsRu00,30,QB,16,16,215,5-11,WisconsinNorth Carolina St.,11/29/1988,6,14,Seattle Seahawks / 3rd / 75th pick / 2012,$15500000
+54,Bobby Wagner\WagnBo00,28,MLB,15,15,245,6-0,Utah St.,6/27/1990,6,16,Seattle Seahawks / 2nd / 47th pick / 2012,$10000000
+3,Russell Wilson\WilsRu00,30,QB,16,16,215,5-11,WisconsinNorth Carolina St.,11/29/1988,6,14,Seattle Seahawks / 3rd / 75th pick / 2012,$15500000
 50,K.J. Wright\WrigK.00,29,lb,5,5,246,6-4,Mississippi St.,7/23/1989,7,2,Seattle Seahawks / 4th / 99th pick / 2011,$7200000

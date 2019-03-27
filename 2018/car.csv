@@ -32,7 +32,7 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 44,J.J. Jansen\JansJ.00,32,,16,0,235,6-2,Notre Dame,1/20/1986,9,1,,$915000
 42,Colin Jones\JoneCo01,31,ss,16,1,205,6-0,TCU,10/27/1987,7,2,San Francisco 49ers / 6th / 190th pick / 2011,$1100000
 67,Ryan Kalil\KaliRy20,33,C,16,16,300,6-2,USC,3/29/1985,11,8,Carolina Panthers / 2nd / 59th pick / 2007,$4500000
-59,Luke Kuechly*+\KuecLu00,27,MLB,16,16,238,6-3,Boston Col.,4/20/1991,6,14,Carolina Panthers / 1st / 9th pick / 2012,$790000
+59,Luke Kuechly\KuecLu00,27,MLB,16,16,238,6-3,Boston Col.,4/20/1991,6,14,Carolina Panthers / 1st / 9th pick / 2012,$790000
 69,Tyler Larsen\LarsTy00,27,rg,16,3,325,6-4,Utah St.,7/8/1991,2,3,,$630000
 93,Kyle Love\LoveKy00,32,dt,16,2,310,6-1,Mississippi St.,11/18/1986,8,2,,$915000
 63,Brendan Mahon\MahoBr00,23,,2,0,320,6-4,,1/17/1995,Rook,0,,$480000
@@ -53,14 +53,14 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 25,Eric Reid\ReidEr00,27,SS,13,13,215,6-1,LSU,12/10/1991,5,4,San Francisco 49ers / 1st / 18th pick / 2013,$823529
 77,Corey Robinson\RobiCo00,26,,1,0,315,6-7,South Carolina,5/21/1992,3,0,Detroit Lions / 7th / 240th pick / 2015,$705000
 10,Curtis Samuel\SamuCu00,22,WR,13,8,195,5-11,Ohio St.,8/11/1996,1,5,Carolina Panthers / 2nd / 40th pick / 2017,$758349
-21,Da'Norris Searcy\SearDa00,30,ss,2,2,205,5-11,North Carolina,11/16/1988,7,1,Buffalo Bills / 4th / 100th pick / 2011,$1000000
-99,Kawann Short*\ShorKa00,29,DT,14,14,315,6-3,Purdue,2/2/1989,5,8,Carolina Panthers / 2nd / 44th pick / 2013,$12500000
+21,DaNorris Searcy\SearDa00,30,ss,2,2,205,5-11,North Carolina,11/16/1988,7,1,Buffalo Bills / 4th / 100th pick / 2011,$1000000
+99,Kawann Short\ShorKa00,29,DT,14,14,315,6-3,Purdue,2/2/1989,5,8,Carolina Panthers / 2nd / 44th pick / 2013,$12500000
 65,Amini Silatolu\SilaAm00,30,,6,0,305,6-4,Midwestern St.,9/16/1988,6,1,Carolina Panthers / 2nd / 40th pick / 2012,$790000
 57,Andre Smith\SmitAn04,21,,3,0,240,6-0,North Carolina,4/20/1997,Rook,0,Carolina Panthers / 7th / 234th pick / 2018,$480000
 11,Torrey Smith\SmitTo02,29,wr,11,6,205,6-0,Maryland,1/26/1989,7,2,Baltimore Ravens / 2nd / 58th pick / 2011,$5000000
 80,Ian Thomas\ThomIa00,22,te,16,6,260,6-3,Indiana,6/6/1996,Rook,3,Carolina Panthers / 4th / 101st pick / 2018,$480000
 54,Shaq Thompson\ThomSh01,24,LB,14,11,230,6-0,Washington,4/21/1994,3,5,Carolina Panthers / 1st / 25th pick / 2015,$936000
-70,Trai Turner*\TurnTr01,25,RG,13,13,315,6-3,LSU,6/14/1993,4,9,Carolina Panthers / 3rd / 92nd pick / 2014,$4703000
+70,Trai Turner\TurnTr01,25,RG,13,13,315,6-3,LSU,6/14/1993,4,9,Carolina Panthers / 3rd / 92nd pick / 2014,$4703000
 73,Greg Van Roten\VanRGr00,28,LG,16,16,305,6-3,Pennsylvanua,2/26/1990,6,8,,$705000
 60,Daryl Williams\WillDa06,26,t,1,1,330,6-6,Oklahoma,8/31/1992,3,1,Carolina Panthers / 4th / 102nd pick / 2015,$1907000
 13,Jarius Wright\WrigJa02,29,wr,16,6,190,5-10,Arkansas,11/25/1989,6,4,Minnesota Vikings / 4th / 118th pick / 2012,$800000

@@ -1,7 +1,7 @@
 No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),Salary
 24,Eli Apple\ApplEl00,23,lcb,5,5,203,6-1,Ohio St.,8/9/1995,2,2,New York Giants / 1st / 10th pick / 2016,$1827484
 55,Ray-Ray Armstrong\ArmsRa01,27,lb,6,1,220,6-3,Miami (FL),3/5/1991,5,1,,$1000000
-26,Saquon Barkley*\BarkSa00,21,RB,16,16,233,5-11,Penn St.,2/9/1997,Rook,14,New York Giants / 1st / 2nd pick / 2018,$480000
+26,Saquon Barkley\BarkSa00,21,RB,16,16,233,5-11,Penn St.,2/9/1997,Rook,14,New York Giants / 1st / 2nd pick / 2018,$480000
 53,Connor Barwin\BarwCo99,32,lb,15,3,255,6-4,Cincinnati,10/15/1986,9,2,Houston Texans / 2nd / 46th pick / 2009,$1270000
 13,Odell Beckham\BeckOd00,26,WR,12,12,198,5-11,LSU,11/5/1992,4,9,New York Giants / 1st / 12th pick / 2014,$1459000
 68,Jamon Brown\BrowJa04,25,RG,8,8,340,6-4,Louisville,3/15/1993,3,4,St. Louis Rams / 3rd / 72nd pick / 2015,$1682647
@@ -10,7 +10,7 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 15,Kaelin Clay\ClayKa00,26,,2,0,195,5-10,Utah,1/3/1992,3,0,Tampa Bay Buccaneers / 6th / 184th pick / 2015,$630000
 19,Corey Coleman\ColeCo00,24,wr,8,1,185,5-11,Baylor,7/6/1994,2,1,Cleveland Browns / 1st / 15th pick / 2016,$370588
 13,Stacy Coley\ColeSt00,24,,1,0,195,6-0,Miami (FL),5/13/1994,1,0,Minnesota Vikings / 7th / 219th pick / 2017,$555000
-21,Landon Collins*\CollLa00,24,SS,12,12,218,6-0,Alabama,1/10/1994,3,5,New York Giants / 2nd / 33rd pick / 2015,$1269620
+21,Landon Collins\CollLa00,24,SS,12,12,218,6-0,Alabama,1/10/1994,3,5,New York Giants / 2nd / 33rd pick / 2015,$1269620
 80,Jawill Davis\DaviJa07,23,,7,0,193,6-0,,4/6/1995,Rook,0,,$129200
 58,Tae Davis\DaviTa00,22,lb,14,4,224,6-1,,8/14/1996,Rook,3,,$480000
 38,Donte Deayon\DeayDo01,24,,4,0,159,5-9,Boise St.,1/28/1994,1,0,,$555000
@@ -51,7 +51,7 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 39,Elijhaa Penny\PennEl00,25,rb,14,3,234,6-2,Idaho,8/17/1993,1,1,,$489705
 77,Spencer Pulley\PullSp00,25,C,13,9,308,6-4,Vanderbilt,4/3/1993,2,5,,$630000
 35,Curtis Riley\RileCu00,26,FS,16,16,190,6-0,Fresno St.,7/18/1992,2,6,,$630000
-2,Aldrick Rosas*\RosaAl00,24,K,16,0,221,6-3,Southern Oregon,12/30/1994,1,5,,$555000
+2,Aldrick Rosas\RosaAl00,24,K,16,0,221,6-3,Southern Oregon,12/30/1994,1,5,,$555000
 84,Alonzo Russell\RussAl01,26,,1,0,206,6-3,Toledo,9/29/1992,Rook,0,,$129200
 8,Russell Shepard\ShepRu00,28,,12,0,195,6-1,LSU,9/17/1990,5,1,,$900000
 87,Sterling Shepard\ShepSt00,25,WR,16,16,201,5-10,Oklahoma,2/10/1993,2,7,New York Giants / 2nd / 40th pick / 2016,$990416
@@ -60,9 +60,9 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 76,Nate Solder\SoldNa00,30,T,16,16,325,6-8,Colorado,4/12/1988,7,9,New England Patriots / 1st / 17th pick / 2011,$5900000
 23,Jonathan Stewart\StewJo00,31,,3,0,240,5-10,Oregon,3/21/1987,10,0,Carolina Panthers / 1st / 13th pick / 2008,$1400000
 57,Nathan Stupar\StupNa01,30,lb,16,1,240,6-2,Penn St.,3/14/1988,6,1,Oakland Raiders / 7th / 230th pick / 2012,$790000
-31,Michael Thomas*\ThomMi02,28,ss,16,6,195,5-11,Stanford,3/17/1990,5,5,,$1100000
+31,Michael Thomas\ThomMi02,28,ss,16,6,195,5-11,Stanford,3/17/1990,5,5,,$1100000
 94,Dalvin Tomlinson\TomlDa00,24,DL,16,16,317,6-3,Alabama,2/28/1994,1,7,New York Giants / 2nd / 55th pick / 2017,$672823
-54,Olivier Vernon*\VernOl00,28,LB,11,11,262,6-2,Miami (FL),10/7/1990,6,7,Miami Dolphins / 3rd / 72nd pick / 2012,$12750000
+54,Olivier Vernon\VernOl00,28,LB,11,11,262,6-2,Miami (FL),10/7/1990,6,7,Miami Dolphins / 3rd / 72nd pick / 2012,$12750000
 23,B.W. Webb\WebbBW00,28,LCB,16,13,190,5-11,William & Mary,5/3/1990,5,4,Dallas Cowboys / 4th / 114th pick / 2013,$790000
 63,Chad Wheeler\WheeCh00,24,T,16,14,312,6-7,USC,1/19/1994,1,8,,$555000
 72,Kerry Wynn\WynnKe00,27,dl,14,5,264,6-5,Richmond,2/12/1991,4,3,,$825000

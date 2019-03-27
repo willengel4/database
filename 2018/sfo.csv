@@ -5,7 +5,7 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 17,Victor Bolden\BoldVi00,23,,4,0,178,5-8,Oregon St.,4/4/1995,1,0,,$424412
 84,Kendrick Bourne\BourKe00,23,WR,16,8,203,6-1,East. Washington,8/4/1995,1,4,,$555000
 22,Matt Breida\BreiMa00,23,RB,14,13,190,5-10,Georgia Southern,2/28/1995,1,6,,$555000
-99,DeForest Buckner*\BuckDe00,24,RDT,16,16,300,6-7,Oregon,3/17/1994,2,10,San Francisco 49ers / 1st / 7th pick / 2016,$630000
+99,DeForest Buckner\BuckDe00,24,RDT,16,16,300,6-7,Oregon,3/17/1994,2,10,San Francisco 49ers / 1st / 7th pick / 2016,$630000
 88,Garrett Celek\CeleGa00,30,te,15,1,252,6-5,Michigan St.,5/29/1988,6,1,,$1650000
 27,Adrian Colbert\ColbAd00,25,fs,7,6,205,6-2,Miami (FL),10/6/1993,1,2,San Francisco 49ers / 7th / 229th pick / 2017,$555000
 50,Brock Coyle\CoylBr00,28,lb,1,1,245,6-1,Montana,10/12/1990,4,0,,$900000
@@ -28,8 +28,8 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 35,Godwin Igwebuike\IgweGo00,24,,5,0,212,6-0,Northwestern,9/10/1994,Rook,0,,$129200
 13,Richie James\JameRi00,23,wr,13,2,185,5-9,Middle Tenn. St.,9/5/1995,Rook,2,San Francisco 49ers / 7th / 240th pick / 2018,$480000
 93,D.J. Jones\JoneD.01,23,ldt,10,4,321,6-0,Mississippi,1/19/1995,1,2,San Francisco 49ers / 6th / 198th pick / 2017,$555000
-44,Kyle Juszczyk*\JuszKy00,27,FB,16,14,240,6-1,Harvard,4/23/1991,5,3,Baltimore Ravens / 4th / 130th pick / 2013,$2750000
-85,George Kittle*\KittGe00,25,TE,16,16,250,6-4,Iowa,10/9/1993,1,10,San Francisco 49ers / 5th / 146th pick / 2017,$555000
+44,Kyle Juszczyk\JuszKy00,27,FB,16,14,240,6-1,Harvard,4/23/1991,5,3,Baltimore Ravens / 4th / 130th pick / 2013,$2750000
+85,George Kittle\KittGe00,25,TE,16,16,250,6-4,Iowa,10/9/1993,1,10,San Francisco 49ers / 5th / 146th pick / 2017,$555000
 47,Elijah Lee\LeexEl00,22,lb,16,5,229,6-2,Kansas St.,2/8/1996,1,4,Minnesota Vikings / 7th / 232nd pick / 2017,$555000
 26,Greg Mabin\MabiGr00,24,rcb,13,1,200,6-1,Iowa,6/25/1994,1,1,,$555000
 62,Erik Magnuson\MagnEr00,24,c,4,1,305,6-4,Michigan,1/5/1994,1,1,,$555000
@@ -64,6 +64,6 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 48,Fred Warner\WarnFr00,22,MLB,16,16,236,6-3,BYU,11/19/1996,Rook,7,San Francisco 49ers / 3rd / 70th pick / 2018,$480000
 97,Dekoda Watson\WatsDe99,30,,4,0,245,6-2,Florida St.,3/3/1988,8,0,Tampa Bay Buccaneers / 7th / 217th pick / 2010,$1050000
 89,Cole Wick\WickCo00,25,,5,0,257,6-6,,11/30/1993,2,0,,$555000
-24,K'Waun Williams\WillKW00,27,cb,14,11,185,5-9,Pittsburgh,7/12/1991,4,4,,$1250000
+24,KWaun Williams\WillKW00,27,cb,14,11,185,5-9,Pittsburgh,7/12/1991,4,4,,$1250000
 41,Jeff Wilson\WilsJe01,23,rb,6,2,194,6-0,,11/16/1995,Rook,2,,$129200
 23,Ahkello Witherspoon\WithAh00,23,RCB,14,12,195,6-2,Colorado,3/21/1995,1,4,San Francisco 49ers / 3rd / 66th pick / 2017,$638325

@@ -61,7 +61,7 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 10,Terrelle Pryor\PryoTe00,29,wr,2,1,228,6-4,Ohio St.,6/20/1989,7,0,Oakland Raiders / 3rd / 1st pick / 2011 Supp,$418235
 37,Denzel Rice\RiceDe00,25,,4,0,185,6-0,Coastal Carolina,3/31/1993,3,0,,$148236
 6,Colton Schmidt\SchmCo00,28,,3,0,224,5-11,California-Davis,10/27/1990,4,0,,$418235
-15,Da'Mari Scott\ScotDa02,23,,3,0,205,6-0,,8/8/1995,Rook,0,,$112940
+15,DaMari Scott\ScotDa02,23,,3,0,205,6-0,,8/8/1995,Rook,0,,$112940
 74,Jeremiah Sirles\SirlJe00,27,te,12,5,315,6-6,Nebraska,8/8/1991,4,2,,$650588
 51,Julian Stanford\StanJu00,28,lb,13,1,230,6-1,Wagner,9/2/1990,6,2,,$1200000
 75,Wyatt Teller\TellWy00,24,lg,8,7,314,6-4,Virginia Tech,11/21/1994,Rook,2,Buffalo Bills / 5th / 166th pick / 2018,$480000
@@ -72,5 +72,5 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 47,Levi Wallace\WallLe00,23,lcb,7,7,179,6-0,Alabama,6/12/1995,Rook,3,,$129200
 92,Adolphus Washington\WashAd00,24,,1,0,295,6-4,Ohio St.,11/24/1994,2,0,Buffalo Bills / 3rd / 80th pick / 2016,$37059
 27,TreDavious White\WhitTr01,23,lcb,16,16,192,5-11,LSU,1/16/1995,1,7,Buffalo Bills / 1st / 27th pick / 2017,$923687
-95,Kyle Williams*\WillKy20,35,LDT,16,16,303,6-1,LSU,6/10/1983,12,11,Buffalo Bills / 5th / 134th pick / 2006,$2250000
+95,Kyle Williams\WillKy20,35,LDT,16,16,303,6-1,LSU,6/10/1983,12,11,Buffalo Bills / 5th / 134th pick / 2006,$2250000
 54,Eddie Yarbrough\YarbEd01,25,,15,0,259,6-3,Wyoming,4/24/1993,1,2,,$555000

@@ -1,4 +1,3 @@
-
 No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),Salary
 70,Oday Aboushi\AbouOd00,27,rg,8,6,315,6-5,Virginia,6/5/1991,5,2,New York Jets / 5th / 141st pick / 2013,$464710
 38,David Amerson\AmerDa00,27,cb,6,5,205,6-1,North Carolina St.,12/8/1991,5,2,Washington Redskins / 2nd / 51st pick / 2013,$278824
@@ -55,7 +54,7 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 91,Ifeadi Odenigbo\OdenIf00,24,,1,0,258,6-3,Northwestern,4/8/1994,Rook,0,Minnesota Vikings / 7th / 220th pick / 2017,$480000
 63,Rees Odhiambo\OdhiRe00,26,,1,0,315,6-4,Boise St.,9/23/1992,2,0,Seattle Seahawks / 3rd / 97th pick / 2016,$148236
 98,Corey Peters\PeteCo00,30,DT,15,15,305,6-3,Kentucky,6/8/1988,8,7,Atlanta Falcons / 3rd / 83rd pick / 2010,$1250000
-21,Patrick Peterson*\PetePa00,28,CB,16,16,203,6-1,LSU,7/11/1990,7,9,Arizona Cardinals / 1st / 5th pick / 2011,$11000000
+21,Patrick Peterson\PetePa00,28,CB,16,16,203,6-1,LSU,7/11/1990,7,9,Arizona Cardinals / 1st / 5th pick / 2011,$11000000
 82,John Phillips\PhilJo00,31,te,8,4,251,6-5,Virginia,6/11/1987,9,0,Dallas Cowboys / 6th / 208th pick / 2009,$484416
 72,Olsen Pierre\PierOl00,27,dt,10,1,293,6-4,Miami (FL),8/27/1991,1,1,,$630000
 35,Eddie Pleasant\PleaEd00,30,,1,0,210,5-10,Oregon,12/17/1988,6,0,,$511176
