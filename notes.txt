@@ -1,0 +1,16 @@
+ALTERATIONS:
+    Player:
+        PlayerID should be string, not auto generated
+        PlayerNumber should be added
+        Name should be firstName, lastName
+    PassPlay:
+        Add new field - Completed 
+
+    TAKE OUT " ' " symbol
+    Names with hyphens (-) need to be handled
+
+    //scp newTables.sql wjengel@storm.cise.ufl.edu:/cise/homes/wjengel
+
+    set define off
+
+    INTERCEPTIONS and FUMBLES need to be handled

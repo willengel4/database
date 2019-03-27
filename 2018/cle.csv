@@ -1,7 +1,7 @@
 No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),Salary
 52,Ray-Ray Armstrong\ArmsRa01,27,,9,0,220,6-3,Miami (FL),3/5/1991,5,1,,$464706
 55,Genard Avery\AverGe00,23,lb,16,5,250,6-0,Memphis,4/26/1995,Rook,4,Cleveland Browns / 5th / 150th pick / 2018,$480000
-75,Joel Bitonio*\BitoJo00,27,LG,16,16,305,6-4,Nevada,10/11/1991,4,10,Cleveland Browns / 2nd / 35th pick / 2014,$5500000
+75,Joel Bitonio\BitoJo00,27,LG,16,16,305,6-4,Nevada,10/11/1991,4,10,Cleveland Browns / 2nd / 35th pick / 2014,$5500000
 20,Briean Boddy-Calhoun\BoddBr01,25,db,16,8,193,5-9,Minnesota,1/21/1993,2,3,,$630000
 52,James Burgess\BurgJa01,24,lb,3,2,230,6-0,Louisville,3/9/1994,1,1,,$555000
 31,Juston Burris\BurrJu00,25,,4,0,212,6-0,North Carolina St.,8/4/1993,2,0,New York Jets / 4th / 118th pick / 2016,$296471
@@ -18,7 +18,7 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 88,Darren Fells\FellDa01,32,TE,16,11,270,6-7,UC Irvine,4/22/1986,5,1,,$1150000
 28,E.J. Gaines\GainE.00,26,cb,6,2,191,5-10,Missouri,2/23/1992,4,1,St. Louis Rams / 6th / 188th pick / 2014,$1750000
 28,Phillip Gaines\GainPh00,27,,4,0,193,6-0,Rice,4/4/1991,4,0,Kansas City Chiefs / 3rd / 87th pick / 2014,$790000
-95,Myles Garrett*\GarrMy00,23,DE,16,16,272,6-4,Texas A&M,12/29/1995,1,14,Cleveland Browns / 1st / 1st pick / 2017,$1847375
+95,Myles Garrett\GarrMy00,23,DE,16,16,272,6-4,Texas A&M,12/29/1995,1,14,Cleveland Browns / 1st / 1st pick / 2017,$1847375
 2,Zane Gonzalez\GonzZa00,23,,2,0,202,6-0,Arizona St.,5/7/1995,1,-1,Cleveland Browns / 7th / 224th pick / 2017,$555000
 12,Josh Gordon\GordJo02,27,wr,1,1,225,6-3,UtahBaylor,4/13/1991,6,0,Cleveland Browns / 2nd / 1st pick / 2012 Supp,$790000
 69,Desmond Harrison\HarrDe05,25,T,8,8,295,6-6,,10/8/1993,Rook,4,,$480000
@@ -33,7 +33,7 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 68,Kyle Kalis\KaliKy00,25,,3,0,306,6-4,Michigan,12/21/1993,1,0,,$163325
 26,Derrick Kindred\KindDe00,25,db,16,2,210,5-10,TCU,12/15/1993,2,2,Cleveland Browns / 4th / 129th pick / 2016,$630000
 58,Christian Kirksey\KirkCh00,26,lb,7,7,235,6-2,Iowa,8/31/1992,4,4,Cleveland Browns / 3rd / 71st pick / 2014,$5000000
-80,Jarvis Landry*\LandJa00,26,WR,16,14,206,5-11,LSU,11/28/1992,4,7,Miami Dolphins / 2nd / 63rd pick / 2014,$3500000
+80,Jarvis Landry\LandJa00,26,WR,16,14,206,5-11,LSU,11/28/1992,4,7,Miami Dolphins / 2nd / 63rd pick / 2014,$3500000
 99,Devaroe Lawrence\LawrDe02,26,,1,0,295,6-2,Auburn,10/13/1992,Rook,0,,$480000
 6,Baker Mayfield\MayfBa00,23,QB,14,13,215,6-1,Oklahoma,4/14/1995,Rook,10,Cleveland Browns / 1st / 1st pick / 2018,$480000
 36,Jeremiah McKinnon\McKiJe01,25,,1,0,192,5-11,,6/29/1993,Rook,0,,$129200
@@ -56,7 +56,7 @@ No.,Player,Age,Pos,G,GS,Wt,Ht,College/Univ,BirthDate,Yrs,AV,Drafted (tm/rnd/yr),
 27,Tavierre Thomas\ThomTa01,22,,13,0,205,5-10,Ferris St.,3/11/1996,Rook,1,,$480000
 64,J.C. Tretter\TretJC00,27,C,16,16,307,6-4,Cornell,2/12/1991,5,7,Green Bay Packers / 4th / 122nd pick / 2013,$5000000
 40,Tanner Vallejo\VallTa00,24,lb,13,1,230,6-1,Boise St.,12/16/1994,1,2,Buffalo Bills / 6th / 195th pick / 2017,$555000
-1,Denzel Ward*\WardDe02,21,CB,13,12,190,5-11,Ohio St.,4/28/1997,Rook,8,Cleveland Browns / 1st / 4th pick / 2018,$480000
+1,Denzel Ward\WardDe02,21,CB,13,12,190,5-11,Ohio St.,4/28/1997,Rook,8,Cleveland Browns / 1st / 4th pick / 2018,$480000
 71,Earl Watford\WatfEa00,28,,13,0,300,6-3,James Madison,6/24/1990,5,0,Arizona Cardinals / 4th / 116th pick / 2013,$790000
 35,Jermaine Whitehead\WhitJe02,25,,7,0,195,5-11,Auburn,3/12/1993,2,0,,$555000
 84,Derrick Willies\WillDe06,24,,5,0,207,6-4,,10/12/1994,Rook,0,,$480000

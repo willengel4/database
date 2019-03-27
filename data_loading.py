@@ -39,6 +39,14 @@ class PassPlay:
     def getInsert(self):
         return "INSERT INTO PassPlay (PassID, PlayID, PasserID, ReceiverID, Completed) VALUES ({0}, {1}, '{2}', '{3}', {4});".format(self.passId, self.playId, self.passerId, self.receiverId, self.completed)
 
+class RunPlay:
+    def __init__(self, runId, playId, runnerId):
+        self.runId = runId
+        self.playId = playId
+        self.runnerId = runnerId
+    def getInsert(self):
+        return "INSERT INTO RunPlay (RunID, PlayID, RunnerID) VALUES ({0}, {1}, '{2}');".format(self.runId, self.playId, self.runnerId)
+
 def loadFile(fileName, fileSep):
     return [line.split(fileSep) for line in open(fileName).readlines()]
 
@@ -62,12 +70,15 @@ def toInches(str):
 currentYear = "2018"
 plays = []
 passPlays = []
+runPlays = []
 currentId = 0
 teams = {line[:-1] + currentYear : line[:-1] for line in open('2018/team_cities.txt').readlines()}
 players = dict()
 games = []
 raw_pbp_data = loadFile('2018/pbp-2018_tabs.txt', '\t')
 rawColumns, rawData = seperateHeadBody(raw_pbp_data)
+
+no_matching_ids = set()
 
 #id for player city.year.number.lastname
 for team_id in teams:
@@ -89,12 +100,12 @@ for team_id in teams:
 
 #Extracts only the pass plays
 passes = selection(rawColumns, rawData, 'PlayType', 'PASS')
-i = 0
 for row in passes:
-    print(i)
-    i += 1
     playDescription = row[rawColumns['Description']]
     playersInvolved = re.findall("\d*-\w\.[A-Z]\w*", playDescription)
+    for i, p in enumerate(playersInvolved):
+        if "'" in p:
+            playersInvolved[i] = p.replaceAll("'", "")
     defenderId = None
     passerId = None
     receiverId = None
@@ -103,28 +114,59 @@ for row in passes:
         games.append(row[rawColumns['GameId']])
     if "INCOMPLETE" not in playDescription:
         complete = True
+    if "INTERCEPT" in playDescription or "FUMBLE" in playDescription:
+        continue
+    if len(playersInvolved) >= 1:
         passerId = row[rawColumns['OffenseTeam']] + currentYear + playersInvolved[0]
+    if len(playersInvolved) >= 2:
         receiverId = row[rawColumns['OffenseTeam']] + currentYear + playersInvolved[1]
-        if len(playersInvolved) >= 3:
-            defenderId = row[rawColumns['DefenseTeam']] + currentYear + playersInvolved[2]
-        if passerId not in players:
-            print(passerId)
-            input('pausing')
-        if receiverId not in players:
-            print(receiverId)
-            input('pausing')
-        if defenderId not in players:
-            print(defenderId)
-            input('pausing')
+    if len(playersInvolved) >= 3:
+        defenderId = row[rawColumns['DefenseTeam']] + currentYear + playersInvolved[2]
     if passerId != None:
         newPlay = Play(currentId, row[rawColumns['GameId']], defenderId, row[rawColumns['Quarter']], row[rawColumns['Minute']], row[rawColumns['Second']], row[rawColumns['Yards']], 0, "PASS", currentId + 1)
         newPassPlay = PassPlay(currentId + 1, currentId, passerId, receiverId, 1 if complete else 0)
         plays.append(newPlay)
         passPlays.append(newPassPlay)
     currentId += 2
+    if(defenderId is not None and defenderId not in players):
+        no_matching_ids.add(defenderId)
+    if(passerId is not None and passerId not in players):
+        no_matching_ids.add(passerId)
+    if(receiverId is not None and receiverId not in players):
+        no_matching_ids.add(receiverId)       
+
+#Extracts only the run plays
+runs = selection(rawColumns, rawData, 'PlayType', 'RUSH')
+for row in runs:
+    playDescription = row[rawColumns['Description']]
+    playersInvolved = re.findall("\d*-\w\.[A-Z]\w*", playDescription)
+    for i, p in enumerate(playersInvolved):
+        if "'" in p:
+            playersInvolved[i] = p.replaceAll("'", "")
+    defenderId = None
+    runnerId = None
+    if(row[rawColumns['GameId']] not in games):
+        games.append(row[rawColumns['GameId']])
+    if "INTERCEPT" in playDescription or "FUMBLE" in playDescription:
+        continue
+    if len(playersInvolved) >= 1:
+        runnerId = row[rawColumns['OffenseTeam']] + currentYear + playersInvolved[0]
+    if len(playersInvolved) >= 2:
+        defenderId = row[rawColumns['DefenseTeam']] + currentYear + playersInvolved[1]
+    if runnerId != None:
+        newPlay = Play(currentId, row[rawColumns['GameId']], defenderId, row[rawColumns['Quarter']], row[rawColumns['Minute']], row[rawColumns['Second']], row[rawColumns['Yards']], 0, "RUN", currentId + 1)
+        newRunPlay = RunPlay(currentId + 1, currentId, runnerId)
+        plays.append(newPlay)
+        runPlays.append(newRunPlay)
+    currentId += 2
+    if(defenderId is not None and defenderId not in players):
+        no_matching_ids.add(defenderId)
+    if(runnerId is not None and runnerId not in players):
+        no_matching_ids.add(runnerId) 
+
 
 for game in games:
-    print("INSERT INTO GAME(GameID) values ('{0}}');".format(game))
+    print("INSERT INTO GAME(GameID) values ('{0}');".format(game))
 
 for team in teams:
     print("INSERT INTO Team (TeamId, City) VALUES ('{0}', '{1}');".format(team, teams[team]))
@@ -137,3 +179,9 @@ for play in plays:
 
 for p in passPlays:
     print(p.getInsert())
+
+for p in runPlays:
+    print(p.getInsert())
+
+for id in no_matching_ids:
+    print(id)
