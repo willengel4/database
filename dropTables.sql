@@ -1,0 +1,14 @@
+drop table TimeOut;
+drop table KickPlay;
+drop table RunPlay;
+drop table passplay;
+drop table puntplay;
+drop table plays_for;
+drop table coaches_for;
+drop table Participates_In;
+drop table play;
+drop table Weather;
+drop table player;
+drop table team;
+drop table coach;
+drop table game;

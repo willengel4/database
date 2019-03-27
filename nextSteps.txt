@@ -7,3 +7,5 @@ ALTERATIONS:
         Add new field - Completed 
 
     TAKE OUT " ' " symbol
+
+    //scp newTables.sql wjengel@storm.cise.ufl.edu:/cise/homes/wjengel

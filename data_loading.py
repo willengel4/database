@@ -11,7 +11,7 @@ class Player:
         self.birthDate = birthDate
         self.college = college
     def getInsert(self):
-        return "INSERT INTO Player (PlayerID, Number, FirstName, LastName, Height, Weight, BirthDate, College) VALUES ('{0}', {1}, '{2}', '{3}', {4}, {5}, TO_DATE('{6}', 'DD/MM/YYYY'), '{7}');".format(self.id, self.number, self.firstName, self.lastName, self.height, self.weight, self.birthDate, self.college)
+        return "INSERT INTO Player (PlayerID, PlayerNumber, FirstName, LastName, Height, Weight, BirthDate, College) VALUES ('{0}', {1}, '{2}', '{3}', {4}, {5}, '{6}', '{7}');".format(self.id, self.number, self.firstName, self.lastName, self.height, self.weight, self.birthDate, self.college)
 
 class Play:
     def __init__(self, playId, gameId, defenderId, quarter, minute, second, yards, goalScored, playType, playChildId):
@@ -26,7 +26,7 @@ class Play:
         self.playType = playType
         self.playChildId = playChildId
     def getInsert(self):
-        return "INSERT INTO Play (PlayID, GameID, DefenderID, Quarter, Minute, Second, Yards, GoalScored, PlayType, PlayTypeID) VALUES ({0}, '{1}', '{2}', {3}, {4}, {5}, {6}, {7}, '{8}', {9});".format(self.playId, self.gameId, self.defenderId, self.quarter, self.minute, self.second, self.yards, False, self.playType, self.playChildId)
+        return "INSERT INTO Play (PlayID, GameID, DefenderID, Quarter, Minute, Second, Yards, GoalScored, PlayType, PlayTypeID) VALUES ({0}, '{1}', '{2}', {3}, {4}, {5}, {6}, {7}, '{8}', {9});".format(self.playId, self.gameId, self.defenderId, self.quarter, self.minute, self.second, self.yards, self.goalScored, self.playType, self.playChildId)
 
 
 class PassPlay:
@@ -60,11 +60,13 @@ def toInches(str):
     return int(t[0]) * 12 + int(t[1])
 
 currentYear = "2018"
-
-#id for team = city.year
+plays = []
+passPlays = []
+currentId = 0
 teams = {line[:-1] + currentYear : line[:-1] for line in open('2018/team_cities.txt').readlines()}
-
 players = dict()
+games = []
+
 #id for player city.year.number.lastname
 for team_id in teams:
     city = teams[team_id]
@@ -82,10 +84,6 @@ for team_id in teams:
         college = row[rosterColumns['College/Univ']]
         id = (city + currentYear + number + "-" + firstName[0] + "." + lastName).upper()
         players[id] = Player(id, number, firstName, lastName, height, weight, birthDate, college)
-
-plays = []
-passPlays = []
-currentId = 0
 
 #Loads raw play by play data
 raw_pbp_data = loadFile('2018/pbp-2018_tabs.txt', '\t')
@@ -119,11 +117,14 @@ for row in passes:
         if defenderId not in players:
             print(defenderId)
             input()
-    newPlay = Play(currentId, row[singleGameColumns['GameId']], defenderId, row[singleGameColumns['Quarter']], row[singleGameColumns['Minute']], row[singleGameColumns['Second']], row[singleGameColumns['Yards']], False, "PASS", currentId + 1)
-    newPassPlay = PassPlay(currentId + 1, currentId, passerId, receiverId, complete)
-    plays.append(newPlay)
-    passPlays.append(newPassPlay)
+    if passerId != None:
+        newPlay = Play(currentId, row[singleGameColumns['GameId']], defenderId, row[singleGameColumns['Quarter']], row[singleGameColumns['Minute']], row[singleGameColumns['Second']], row[singleGameColumns['Yards']], 0, "PASS", currentId + 1)
+        newPassPlay = PassPlay(currentId + 1, currentId, passerId, receiverId, 1 if complete else 0)
+        plays.append(newPlay)
+        passPlays.append(newPassPlay)
     currentId += 2
+
+print("INSERT INTO GAME(GameID) values ('2018090600');")
 
 for team in teams:
     print("INSERT INTO Team (TeamId, City) VALUES ('{0}', '{1}');".format(team, teams[team]))
