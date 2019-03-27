@@ -66,6 +66,8 @@ currentId = 0
 teams = {line[:-1] + currentYear : line[:-1] for line in open('2018/team_cities.txt').readlines()}
 players = dict()
 games = []
+raw_pbp_data = loadFile('2018/pbp-2018_tabs.txt', '\t')
+rawColumns, rawData = seperateHeadBody(raw_pbp_data)
 
 #id for player city.year.number.lastname
 for team_id in teams:
@@ -85,46 +87,44 @@ for team_id in teams:
         id = (city + currentYear + number + "-" + firstName[0] + "." + lastName).upper()
         players[id] = Player(id, number, firstName, lastName, height, weight, birthDate, college)
 
-#Loads raw play by play data
-raw_pbp_data = loadFile('2018/pbp-2018_tabs.txt', '\t')
-columns, data = seperateHeadBody(raw_pbp_data)
-
-#Extracts only the first game's plays (phi vs atl)
-singleGameColumns, singleGame = projection(columns, selection(columns, data, 'GameId', '2018090600'), ['GameId', 'Quarter', 'Minute', 'Second', 'Description', 'OffenseTeam', 'DefenseTeam', 'Yards', 'PlayType'])
-
 #Extracts only the pass plays
-passes = selection(singleGameColumns, singleGame, 'PlayType', 'PASS')
+passes = selection(rawColumns, rawData, 'PlayType', 'PASS')
+i = 0
 for row in passes:
-    playDescription = row[singleGameColumns['Description']]
+    print(i)
+    i += 1
+    playDescription = row[rawColumns['Description']]
     playersInvolved = re.findall("\d*-\w\.[A-Z]\w*", playDescription)
     defenderId = None
     passerId = None
     receiverId = None
     complete = False
+    if(row[rawColumns['GameId']] not in games):
+        games.append(row[rawColumns['GameId']])
     if "INCOMPLETE" not in playDescription:
         complete = True
-        passerId = row[singleGameColumns['OffenseTeam']] + currentYear + playersInvolved[0]
-        receiverId = row[singleGameColumns['OffenseTeam']] + currentYear + playersInvolved[1]
+        passerId = row[rawColumns['OffenseTeam']] + currentYear + playersInvolved[0]
+        receiverId = row[rawColumns['OffenseTeam']] + currentYear + playersInvolved[1]
         if len(playersInvolved) >= 3:
-            defenderId = row[singleGameColumns['DefenseTeam']] + currentYear + playersInvolved[2]
-        
+            defenderId = row[rawColumns['DefenseTeam']] + currentYear + playersInvolved[2]
         if passerId not in players:
             print(passerId)
-            input()
+            input('pausing')
         if receiverId not in players:
             print(receiverId)
-            input()
+            input('pausing')
         if defenderId not in players:
             print(defenderId)
-            input()
+            input('pausing')
     if passerId != None:
-        newPlay = Play(currentId, row[singleGameColumns['GameId']], defenderId, row[singleGameColumns['Quarter']], row[singleGameColumns['Minute']], row[singleGameColumns['Second']], row[singleGameColumns['Yards']], 0, "PASS", currentId + 1)
+        newPlay = Play(currentId, row[rawColumns['GameId']], defenderId, row[rawColumns['Quarter']], row[rawColumns['Minute']], row[rawColumns['Second']], row[rawColumns['Yards']], 0, "PASS", currentId + 1)
         newPassPlay = PassPlay(currentId + 1, currentId, passerId, receiverId, 1 if complete else 0)
         plays.append(newPlay)
         passPlays.append(newPassPlay)
     currentId += 2
 
-print("INSERT INTO GAME(GameID) values ('2018090600');")
+for game in games:
+    print("INSERT INTO GAME(GameID) values ('{0}}');".format(game))
 
 for team in teams:
     print("INSERT INTO Team (TeamId, City) VALUES ('{0}', '{1}');".format(team, teams[team]))
