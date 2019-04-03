@@ -62,6 +62,15 @@ class TimeOut:
     def getInsert(self):
         return "INSERT INTO TimeOut (TimeOutID, PlayID, Duration) VALUES ({0}, {1}, {2});".format(self.timeoutId, self.playId, 0)
 
+class PlaysFor:
+    def __init__(self, playerId, teamId, year, role):
+        self.playerId = playerId
+        self.teamId = teamId
+        self.year = year
+        self.role = role
+    def getInsert(self):
+        return "INSERT INTO Plays_For (PlayerID, TeamID, Year, Role) values ('{0}', '{1}', {2}, '{3}');".format(self.playerId, self.teamId, self.year, self.role)
+
 def loadFile(fileName, fileSep):
     return [line.split(fileSep) for line in open(fileName).readlines()]
 
@@ -94,6 +103,7 @@ passPlays = []
 runPlays = []
 kickPlays = []
 timeouts = []
+playsFors = []
 currentId = 0
 teams = {line[:-1] + currentYear : line[:-1] for line in open('2018/team_cities.txt').readlines()}
 players = dict()
@@ -124,6 +134,8 @@ for team_id in teams:
             college = college.replace('&', '')
         id = (city + currentYear + number + "-" + firstName[0] + "." + lastName).upper()
         players[id] = Player(id, number, firstName, lastName, height, weight, birthDate, college)
+        newPlaysFor = PlaysFor(id, team_id, currentYear, row[rosterColumns['Pos']])
+        playsFors.append(newPlaysFor)
 
 #Extracts only the pass plays
 passes = selection(rawColumns, rawData, 'PlayType', 'PASS')
@@ -262,3 +274,6 @@ for k in kickPlays:
 
 for t in timeouts:
     print(t.getInsert())
+
+for p in playsFors:
+    print(p.getInsert())

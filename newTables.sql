@@ -19,12 +19,11 @@ CREATE TABLE Team (
 CONSTRAINT team_pk PRIMARY KEY (TeamID));
 
 CREATE TABLE Plays_For (
-    EndDate DATE,
-    StartDate DATE,
-    Role VARCHAR(50),
     PlayerID varchar(50) NOT NULL,
     TeamID varchar(50) NOT NULL,
-    CONSTRAINT plays_for_pk PRIMARY KEY (StartDate, PlayerID, TeamID),
+    Year INT NOT NULL,
+    Role VARCHAR(50),
+    CONSTRAINT plays_for_pk PRIMARY KEY (PlayerID, TeamID),
     CONSTRAINT fk_player_for FOREIGN KEY (PlayerID) REFERENCES Player(PlayerID),
 CONSTRAINT fk_team_for FOREIGN KEY (TeamID) REFERENCES Team(TeamID));
 
