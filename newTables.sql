@@ -29,16 +29,15 @@ CONSTRAINT fk_team_for FOREIGN KEY (TeamID) REFERENCES Team(TeamID));
 
 CREATE TABLE Coach (
     CoachID VARCHAR(50) NOT NULL,
-    HomeTown VARCHAR(50),
-    Name VARCHAR(50),
-CONSTRAINT coach_pk PRIMARY KEY (CoachID)) ;
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+CONSTRAINT coach_pk PRIMARY KEY (CoachID));
 
 CREATE TABLE Coaches_For(
-    StartDate DATE,
-    EndDate DATE,
+    Year int not null,
     TeamID varchar(50) NOT NULL,
     CoachID varchar(50) NOT NULL,
-    CONSTRAINT coaches_for_pk PRIMARY KEY (StartDate, TeamID, CoachID),
+    CONSTRAINT coaches_for_pk PRIMARY KEY (TeamID, CoachID),
     CONSTRAINT fk_coach_team FOREIGN KEY (TeamID) REFERENCES Team(TeamID),
 CONSTRAINT fk_coach FOREIGN KEY (CoachID) REFERENCES Coach(CoachID));
 

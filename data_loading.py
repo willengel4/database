@@ -55,6 +55,14 @@ class KickPlay:
     def getInsert(self):
         return "INSERT INTO KickPlay (KickID, PlayID, KickerID) VALUES ({0}, {1}, {2});".format(self.kickId, self.playId, self.kickerId)
 
+class PuntPlay:
+    def __init__(self, puntId, playId, punterId):
+        self.puntId = puntId
+        self.playId = playId
+        self.punterId = punterId
+    def getInsert(self):
+        return "INSERT INTO PuntPlay (PuntID, PlayID, PunterID) VALUES ({0}, {1}, {2});".format(self.puntId, self.playId, self.punterId)
+
 class TimeOut:
     def __init__(self, timeoutId, playId):
         self.timeoutId = timeoutId
@@ -71,8 +79,24 @@ class PlaysFor:
     def getInsert(self):
         return "INSERT INTO Plays_For (PlayerID, TeamID, Year, Role) values ('{0}', '{1}', {2}, '{3}');".format(self.playerId, self.teamId, self.year, self.role)
 
+class Coach:
+    def __init__(self, coachId, firstName, lastName):
+        self.coachId = coachId
+        self.firstName = firstName
+        self.lastName = lastName
+    def getInsert(self):
+        return "INSERT INTO Coach values ({0}, '{1}', '{2}');".format(self.coachId, self.firstName, self.lastName)
+
+class CoachesFor:
+    def __init__(self, teamId, coachId, year):
+        self.teamId = teamId
+        self.coachId = coachId
+        self.year = year
+    def getInsert(self):
+        return "INSERT INTO Coaches_For values ({0}, {1}, {2});".format(self.year, self.teamId, self.coachId)
+
 def loadFile(fileName, fileSep):
-    return [line.split(fileSep) for line in open(fileName).readlines()]
+    return [line[:-1].split(fileSep) for line in open(fileName).readlines()]
 
 def columnIndices(csvHeader):
     return { column : index for index, column in enumerate(csvHeader)}
@@ -104,12 +128,15 @@ runPlays = []
 kickPlays = []
 timeouts = []
 playsFors = []
+puntPlays = []
 currentId = 0
 teams = {line[:-1] + currentYear : line[:-1] for line in open('2018/team_cities.txt').readlines()}
 players = dict()
 games = []
 raw_pbp_data = loadFile('2018/pbp-2018_tabs.txt', '\t')
 rawColumns, rawData = seperateHeadBody(raw_pbp_data)
+raw_coach_data = loadFile('2018/coaches.txt', ',')
+coachColumns, coachData = seperateHeadBody(raw_coach_data)
 
 no_matching_ids = list()
 
@@ -240,6 +267,31 @@ for row in field_goals:
         kickPlays.append(newKickPlay)
     currentId += 2
 
+#Extracts only the punts
+punts = selection(rawColumns, rawData, 'PlayType', 'PUNT')
+for row in punts:
+    playDescription = row[rawColumns['Description']]
+    if "BLOCKED" in playDescription or "FUMBLE" in playDescription or "PENALTY" in playDescription or "(PUNT FORMATION)" in playDescription or "END GAME" in playDescription:
+        continue
+    playersInvolved = re.findall("\d*-[A-Z]\w*\.[A-Z]\w*", playDescription)
+    yardage = re.findall("PUNTS [0-9]* YARDS", playDescription)[0].split(' ')[1]
+    for i, p in enumerate(playersInvolved):
+        if "'" in p:
+            playersInvolved[i] = p.replaceAll("'", "")
+    defenderId = None
+    punterId = None
+    goalScored = False
+    if(row[rawColumns['GameId']] not in games):
+        games.append(row[rawColumns['GameId']])
+    if len(playersInvolved) >= 1:
+        punterId = row[rawColumns['OffenseTeam']] + currentYear + playersInvolved[0]
+    if punterId != None and punterId in players:
+        newPlay = Play(currentId, row[rawColumns['GameId']], formatId(defenderId), row[rawColumns['Quarter']], row[rawColumns['Minute']], row[rawColumns['Second']], yardage, 1 if goalScored else 0, "PUNT", currentId + 1)
+        newPuntPlay = PuntPlay(currentId + 1, currentId, formatId(punterId))
+        plays.append(newPlay)
+        puntPlays.append(newPuntPlay)
+    currentId += 2
+
 #Extracts only the timeouts
 timeoutPlays = selection(rawColumns, rawData, 'PlayType', 'TIMEOUT')
 for row in timeoutPlays:
@@ -250,6 +302,17 @@ for row in timeoutPlays:
     plays.append(newPlay)
     timeouts.append(newTimeout)
     currentId += 2
+
+coaches = []
+coachesfors = []
+for row in coachData:
+    team = row[coachColumns['Team']]
+    firstName = row[coachColumns['First']]
+    lastName = row[coachColumns['Last']]
+    teamId = team + str(currentYear)
+    coachId = teamId + lastName
+    coaches.append(Coach(formatId(coachId), firstName, lastName))
+    coachesfors.append(CoachesFor(formatId(teamId), formatId(coachId), currentYear))
 
 for game in games:
     print("INSERT INTO GAME(GameID) values ('{0}');".format(game))
@@ -272,8 +335,17 @@ for p in runPlays:
 for k in kickPlays:
     print(k.getInsert())
 
+for p in puntPlays:
+    print(p.getInsert())
+
 for t in timeouts:
     print(t.getInsert())
 
 for p in playsFors:
     print(p.getInsert())
+
+for c in coaches:
+    print(c.getInsert())
+
+for cf in coachesfors:
+    print(cf.getInsert())
