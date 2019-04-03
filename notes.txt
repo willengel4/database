@@ -9,8 +9,8 @@ ALTERATIONS:
     TAKE OUT " ' " symbol
     Names with hyphens (-) need to be handled
 
-    //scp newTables.sql wjengel@storm.cise.ufl.edu:/cise/homes/wjengel
+    //scp inserts.sql wjengel@storm.cise.ufl.edu:/cise/homes/wjengel
 
     set define off
 
-    INTERCEPTIONS and FUMBLES need to be handled
+    INTERCEPTIONS and FUMBLES need to be handled (or just disregarded)
