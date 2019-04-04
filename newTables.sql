@@ -43,8 +43,8 @@ CONSTRAINT fk_coach FOREIGN KEY (CoachID) REFERENCES Coach(CoachID));
 
 CREATE TABLE Game (
     GameID VARCHAR(50) NOT NULL,
-    City VARCHAR(50), 
-    Game_Date DATE,
+    Game_Date_Time DATE,
+    City VARCHAR(10), 
 CONSTRAINT game_pk PRIMARY KEY (GameID));
 
 CREATE TABLE Participates_In (

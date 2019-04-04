@@ -1,4 +1,5 @@
 import re
+from datetime import datetime
 
 class Player:
     def __init__(self, id, number, firstName, lastName, height, weight, birthDate, college):
@@ -27,7 +28,6 @@ class Play:
         self.playChildId = playChildId
     def getInsert(self):
         return "INSERT INTO Play (PlayID, GameID, DefenderID, Quarter, Minute, Second, Yards, GoalScored, PlayType, PlayTypeID) VALUES ({0}, '{1}', {2}, {3}, {4}, {5}, {6}, {7}, '{8}', {9});".format(self.playId, self.gameId, self.defenderId, self.quarter, self.minute, self.second, self.yards, self.goalScored, self.playType, self.playChildId)
-
 
 class PassPlay:
     def __init__(self, passId, playId, passerId, receiverId, completed):
@@ -95,6 +95,19 @@ class CoachesFor:
     def getInsert(self):
         return "INSERT INTO Coaches_For values ({0}, {1}, {2});".format(self.year, self.teamId, self.coachId)
 
+class Game:
+    def __init__(self, gameId, gameDate, gameTime, gameCity, homeTeam, awayTeam):
+        self.gameId = gameId
+        self.gameDate = gameDate
+        self.gameTime = gameTime
+        self.gameCity = gameCity
+        self.homeTeam = homeTeam
+        self.awayTeam = awayTeam
+    def getGameInsert(self):
+        return "INSERT INTO Game values ('{0}', TO_DATE('{1} {2}', 'MM/DD/YYYY HH:MIAM'), '{3}');".format(self.gameId, self.gameDate, self.gameTime, self.gameCity)
+    def getParticipateInsert(self):
+        return "INSERT INTO Participates_In values ('{0}', '{1}', '{2}');".format(self.homeTeam + '2018', self.gameId, self.awayTeam + '2018')
+
 def loadFile(fileName, fileSep):
     return [line[:-1].split(fileSep) for line in open(fileName).readlines()]
 
@@ -121,6 +134,15 @@ def formatId(id):
     else:
         return "'{0}'".format(id)
 
+def getGameId(games, gameDate, team1):
+    gameDateAsDate = datetime.strptime(gameDate, '%m/%d/%Y')
+    for game in games:
+        posGameDate = datetime.strptime(game.gameDate, '%m/%d/%Y')
+        if gameDateAsDate == posGameDate and (team1 == game.awayTeam or team1 == game.homeTeam):
+            return game.gameId
+
+    input(gameDate + " " + team1)
+
 currentYear = "2018"
 plays = []
 passPlays = []
@@ -133,12 +155,33 @@ currentId = 0
 teams = {line[:-1] + currentYear : line[:-1] for line in open('2018/team_cities.txt').readlines()}
 players = dict()
 games = []
+participates = []
+zipcodes = dict()
 raw_pbp_data = loadFile('2018/pbp-2018_tabs.txt', '\t')
 rawColumns, rawData = seperateHeadBody(raw_pbp_data)
 raw_coach_data = loadFile('2018/coaches.txt', ',')
 coachColumns, coachData = seperateHeadBody(raw_coach_data)
-
+raw_schedule_data = loadFile('2018/schedule2018.txt', ',')
+scheduleColumns, scheduleData = seperateHeadBody(raw_schedule_data)
+raw_zip_data = loadFile('2018/zipcodes.txt', ',')
+zipColumns, zipData = seperateHeadBody(raw_zip_data)
 no_matching_ids = list()
+
+for row in zipData:
+    team = row[0]
+    zip = row[1]
+    zipcodes[team] = zip
+
+for row in scheduleData:
+    winner = row[scheduleColumns['WINNER']]
+    loser = row[scheduleColumns['LOSER']]
+    location = row[scheduleColumns['LOCATION']]
+    homeTeam = loser if location == 'AT' else winner
+    awayTeam = winner if location == 'AT' else loser
+    gameDate = row[scheduleColumns['DATE']]
+    gameTime = row[scheduleColumns['TIME']]
+    gameId = currentYear + gameDate.replace('/', '') + homeTeam
+    games.append(Game(gameId, gameDate, gameTime, zipcodes[homeTeam], homeTeam, awayTeam))
 
 #id for player city.year.number.lastname
 for team_id in teams:
@@ -177,8 +220,6 @@ for row in passes:
     receiverId = None
     complete = "INCOMPLETE" not in playDescription
     goalScored = "TOUCHDOWN" in playDescription
-    if(row[rawColumns['GameId']] not in games):
-        games.append(row[rawColumns['GameId']])
     if "INTERCEPT" in playDescription or "FUMBLE" in playDescription or "PENALTY" in playDescription:
         continue
     if len(playersInvolved) >= 1:
@@ -197,7 +238,8 @@ for row in passes:
             no_matching_ids.append('\t' + receiverId)
         continue
     if passerId != None:
-        newPlay = Play(currentId, row[rawColumns['GameId']], formatId(defenderId), row[rawColumns['Quarter']], row[rawColumns['Minute']], row[rawColumns['Second']], row[rawColumns['Yards']], 1 if goalScored else 0, "PASS", currentId + 1)
+        gameId = getGameId(games, row[rawColumns['GameDate']], row[rawColumns['DefenseTeam']])
+        newPlay = Play(currentId, gameId, formatId(defenderId), row[rawColumns['Quarter']], row[rawColumns['Minute']], row[rawColumns['Second']], row[rawColumns['Yards']], 1 if goalScored else 0, "PASS", currentId + 1)
         newPassPlay = PassPlay(currentId + 1, currentId, formatId(passerId), formatId(receiverId), 1 if complete else 0)
         plays.append(newPlay)
         passPlays.append(newPassPlay)
@@ -214,8 +256,6 @@ for row in runs:
     defenderId = None
     runnerId = None
     goalScored = "TOUCHDOWN" in playDescription
-    if(row[rawColumns['GameId']] not in games):
-        games.append(row[rawColumns['GameId']])
     if "INTERCEPT" in playDescription or "FUMBLE" in playDescription or "PENALTY" in playDescription:
         continue
     if len(playersInvolved) >= 1:
@@ -230,7 +270,8 @@ for row in runs:
             no_matching_ids.append('\t' + runnerId)
         continue
     if runnerId != None:
-        newPlay = Play(currentId, row[rawColumns['GameId']], formatId(defenderId), row[rawColumns['Quarter']], row[rawColumns['Minute']], row[rawColumns['Second']], row[rawColumns['Yards']], 1 if goalScored else 0, "RUN", currentId + 1)
+        gameId = getGameId(games, row[rawColumns['GameDate']], row[rawColumns['DefenseTeam']])
+        newPlay = Play(currentId, gameId, formatId(defenderId), row[rawColumns['Quarter']], row[rawColumns['Minute']], row[rawColumns['Second']], row[rawColumns['Yards']], 1 if goalScored else 0, "RUN", currentId + 1)
         newRunPlay = RunPlay(currentId + 1, currentId, formatId(runnerId))
         plays.append(newPlay)
         runPlays.append(newRunPlay)
@@ -247,8 +288,6 @@ for row in field_goals:
     defenderId = None
     kickerId = None
     goalScored = "IS GOOD" in playDescription
-    if(row[rawColumns['GameId']] not in games):
-        games.append(row[rawColumns['GameId']])
     if "INTERCEPT" in playDescription or "FUMBLE" in playDescription or "PENALTY" in playDescription:
         continue
     if len(playersInvolved) >= 1:
@@ -261,7 +300,8 @@ for row in field_goals:
             no_matching_ids.append('\t' + kickerId)
         continue
     if kickerId != None:
-        newPlay = Play(currentId, row[rawColumns['GameId']], formatId(defenderId), row[rawColumns['Quarter']], row[rawColumns['Minute']], row[rawColumns['Second']], row[rawColumns['Yards']], 1 if goalScored else 0, "KICK", currentId + 1)
+        gameId = getGameId(games, row[rawColumns['GameDate']], row[rawColumns['DefenseTeam']])
+        newPlay = Play(currentId, gameId, formatId(defenderId), row[rawColumns['Quarter']], row[rawColumns['Minute']], row[rawColumns['Second']], row[rawColumns['Yards']], 1 if goalScored else 0, "KICK", currentId + 1)
         newKickPlay = KickPlay(currentId + 1, currentId, formatId(kickerId))
         plays.append(newPlay)
         kickPlays.append(newKickPlay)
@@ -281,12 +321,11 @@ for row in punts:
     defenderId = None
     punterId = None
     goalScored = False
-    if(row[rawColumns['GameId']] not in games):
-        games.append(row[rawColumns['GameId']])
     if len(playersInvolved) >= 1:
         punterId = row[rawColumns['OffenseTeam']] + currentYear + playersInvolved[0]
     if punterId != None and punterId in players:
-        newPlay = Play(currentId, row[rawColumns['GameId']], formatId(defenderId), row[rawColumns['Quarter']], row[rawColumns['Minute']], row[rawColumns['Second']], yardage, 1 if goalScored else 0, "PUNT", currentId + 1)
+        gameId = getGameId(games, row[rawColumns['GameDate']], row[rawColumns['DefenseTeam']])
+        newPlay = Play(currentId, gameId, formatId(defenderId), row[rawColumns['Quarter']], row[rawColumns['Minute']], row[rawColumns['Second']], yardage, 1 if goalScored else 0, "PUNT", currentId + 1)
         newPuntPlay = PuntPlay(currentId + 1, currentId, formatId(punterId))
         plays.append(newPlay)
         puntPlays.append(newPuntPlay)
@@ -295,9 +334,8 @@ for row in punts:
 #Extracts only the timeouts
 timeoutPlays = selection(rawColumns, rawData, 'PlayType', 'TIMEOUT')
 for row in timeoutPlays:
-    if(row[rawColumns['GameId']] not in games):
-        games.append(row[rawColumns['GameId']])
-    newPlay = Play(currentId, row[rawColumns['GameId']], 'NULL', row[rawColumns['Quarter']], row[rawColumns['Minute']], row[rawColumns['Second']], row[rawColumns['Yards']], 0, "TIMEOUT", currentId + 1)
+    gameId = getGameId(games, row[rawColumns['GameDate']], row[rawColumns['DefenseTeam']])
+    newPlay = Play(currentId, gameId, 'NULL', row[rawColumns['Quarter']], row[rawColumns['Minute']], row[rawColumns['Second']], row[rawColumns['Yards']], 0, "TIMEOUT", currentId + 1)
     newTimeout = TimeOut(currentId + 1, currentId)
     plays.append(newPlay)
     timeouts.append(newTimeout)
@@ -314,11 +352,14 @@ for row in coachData:
     coaches.append(Coach(formatId(coachId), firstName, lastName))
     coachesfors.append(CoachesFor(formatId(teamId), formatId(coachId), currentYear))
 
-for game in games:
-    print("INSERT INTO GAME(GameID) values ('{0}');".format(game))
-
 for team in teams:
     print("INSERT INTO Team (TeamId, City) VALUES ('{0}', '{1}');".format(team, teams[team]))
+
+for game in games:
+    print(game.getGameInsert())
+
+for game in games:
+    print(game.getParticipateInsert())
 
 for player in players:
     print(players[player].getInsert())
