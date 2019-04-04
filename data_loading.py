@@ -106,7 +106,7 @@ class Game:
     def getGameInsert(self):
         return "INSERT INTO Game values ('{0}', TO_DATE('{1} {2}', 'MM/DD/YYYY HH:MIAM'), '{3}');".format(self.gameId, self.gameDate, self.gameTime, self.gameCity)
     def getParticipateInsert(self):
-        return "INSERT INTO Participates_In values ('{0}', '{1}', '{2}');".format(self.homeTeam + '2018', self.gameId, self.awayTeam + '2018')
+        return "INSERT INTO Participates_In values ('{0}', '{1}', '{2}');".format(self.homeTeam + '2017', self.gameId, self.awayTeam + '2017')
 
 def loadFile(fileName, fileSep):
     return [line[:-1].split(fileSep) for line in open(fileName).readlines()]
@@ -125,6 +125,8 @@ def projection(columns, data, columnsToInclude):
     return columnIndices(columnsToInclude), [[row[index] for index in indices] for row in data]
 
 def toInches(str):
+    if str == '':
+        return 60
     t = str.split('-')
     return int(t[0]) * 12 + int(t[1])
 
@@ -140,10 +142,8 @@ def getGameId(games, gameDate, team1):
         posGameDate = datetime.strptime(game.gameDate, '%m/%d/%Y')
         if gameDateAsDate == posGameDate and (team1 == game.awayTeam or team1 == game.homeTeam):
             return game.gameId
-
-    input(gameDate + " " + team1)
-
-currentYear = "2018"
+            
+currentYear = "2017"
 plays = []
 passPlays = []
 runPlays = []
@@ -151,19 +151,19 @@ kickPlays = []
 timeouts = []
 playsFors = []
 puntPlays = []
-currentId = 0
-teams = {line[:-1] + currentYear : line[:-1] for line in open('2018/team_cities.txt').readlines()}
+currentId = 100000
+teams = {line[:-1] + currentYear : line[:-1] for line in open('2017/team_cities.txt').readlines()}
 players = dict()
 games = []
 participates = []
 zipcodes = dict()
-raw_pbp_data = loadFile('2018/pbp-2018_tabs.txt', '\t')
+raw_pbp_data = loadFile('2017/pbp-2017_tabs.txt', '\t')
 rawColumns, rawData = seperateHeadBody(raw_pbp_data)
-raw_coach_data = loadFile('2018/coaches.txt', ',')
+raw_coach_data = loadFile('2017/coaches.txt', ',')
 coachColumns, coachData = seperateHeadBody(raw_coach_data)
-raw_schedule_data = loadFile('2018/schedule2018.txt', ',')
+raw_schedule_data = loadFile('2017/schedule2017.txt', ',')
 scheduleColumns, scheduleData = seperateHeadBody(raw_schedule_data)
-raw_zip_data = loadFile('2018/zipcodes.txt', ',')
+raw_zip_data = loadFile('2017/zipcodes.txt', ',')
 zipColumns, zipData = seperateHeadBody(raw_zip_data)
 no_matching_ids = list()
 
